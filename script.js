@@ -10,8 +10,9 @@ document.getElementById('add-task-btn').addEventListener('click', function() {
         const todoItem = document.createElement('li');
         todoItem.classList.add('todo-item');
         todoItem.innerHTML = `
-            <span>${todoText}</span>
-            <p>${descriptionText}</p>
+            <span class="todo-text">${todoText}</span>
+            <p class="todo-description">${descriptionText}</p>
+            <button class="edit-btn" onclick="editTask(this)">Edit</button>
             <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
         `;
         document.getElementById('todo-list').appendChild(todoItem);
@@ -30,4 +31,52 @@ function deleteTask(button) {
 
     // Optionally, add the "deleted" class for styling (e.g., strikethrough)
     taskItem.classList.add('deleted');
+}
+
+// Function to edit task
+function editTask(button) {
+    const taskItem = button.parentElement;
+    
+    // Get current task text and description
+    const todoText = taskItem.querySelector('.todo-text');
+    const todoDescription = taskItem.querySelector('.todo-description');
+    
+    // Create input fields for editing
+    const todoTextInput = document.createElement('input');
+    todoTextInput.value = todoText.textContent;
+    const descriptionTextInput = document.createElement('textarea');
+    descriptionTextInput.value = todoDescription.textContent;
+
+    // Replace text with input fields
+    taskItem.replaceChild(todoTextInput, todoText);
+    taskItem.replaceChild(descriptionTextInput, todoDescription);
+
+    // Change the Edit button to Save
+    button.textContent = 'Save';
+    button.setAttribute('onclick', 'saveTask(this)');
+}
+
+// Function to save edited task
+function saveTask(button) {
+    const taskItem = button.parentElement;
+    
+    // Get the updated values
+    const todoTextInput = taskItem.querySelector('input');
+    const descriptionTextInput = taskItem.querySelector('textarea');
+    
+    // Replace input fields with updated text
+    const todoText = document.createElement('span');
+    todoText.classList.add('todo-text');
+    todoText.textContent = todoTextInput.value;
+    
+    const todoDescription = document.createElement('p');
+    todoDescription.classList.add('todo-description');
+    todoDescription.textContent = descriptionTextInput.value;
+    
+    taskItem.replaceChild(todoText, todoTextInput);
+    taskItem.replaceChild(todoDescription, descriptionTextInput);
+
+    // Change the button back to Edit
+    button.textContent = 'Edit';
+    button.setAttribute('onclick', 'editTask(this)');
 }
