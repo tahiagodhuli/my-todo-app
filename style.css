@@ -13,7 +13,7 @@ body {
 }
 
 .app {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -68,13 +68,7 @@ button:hover {
     background-color: #ff69b4;
 }
 
-/* Task list container */
-ul {
-    list-style-type: none;
-    margin-top: 20px;
-    padding-left: 0;
-}
-
+/* Tasks Container (Active and Deleted Tasks side by side) */
 .tasks-container {
     display: flex;
     justify-content: space-between;
@@ -82,7 +76,7 @@ ul {
     width: 100%;
 }
 
-/* Task box (Active and Deleted Tasks) */
+/* Task Box (Active and Deleted Tasks) */
 .tasks-box {
     background-color: white;
     padding: 20px;
@@ -91,7 +85,13 @@ ul {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Todo Item */
+/* Todo List */
+ul {
+    list-style-type: none;
+    margin-top: 20px;
+    padding-left: 0;
+}
+
 .todo-item {
     display: flex;
     flex-direction: column;
