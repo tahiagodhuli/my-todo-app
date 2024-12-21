@@ -1,3 +1,4 @@
+// Event listener for adding tasks
 document.getElementById('add-task-btn').addEventListener('click', function() {
     const todoInput = document.getElementById('todo-input');
     const descriptionInput = document.getElementById('description-input');
@@ -19,8 +20,13 @@ document.getElementById('add-task-btn').addEventListener('click', function() {
     }
 });
 
-// Function to delete task
+// Function to delete task and move it to the "Deleted Tasks" section
 function deleteTask(button) {
     const taskItem = button.parentElement;
-    taskItem.remove();
+    
+    // Move the task to the deleted list
+    document.getElementById('deleted-list').appendChild(taskItem);
+    
+    // Optionally, add the "deleted" class for styling (e.g., strikethrough)
+    taskItem.classList.add('deleted');
 }
