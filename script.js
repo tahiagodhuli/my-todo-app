@@ -25,8 +25,9 @@ function deleteTask(button) {
     const taskItem = button.parentElement;
     
     // Move the task to the deleted list
-    document.getElementById('deleted-list').appendChild(taskItem);
-    
+    const deletedList = document.getElementById('deleted-list');
+    deletedList.appendChild(taskItem);
+
     // Optionally, add the "deleted" class for styling (e.g., strikethrough)
     taskItem.classList.add('deleted');
 }
