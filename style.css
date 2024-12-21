@@ -1,4 +1,3 @@
-/* Global styles */
 * {
     margin: 0;
     padding: 0;
@@ -68,7 +67,6 @@ button:hover {
     background-color: #ff69b4;
 }
 
-/* Tasks Container (Active and Deleted Tasks side by side) */
 .tasks-container {
     display: flex;
     justify-content: space-between;
@@ -76,7 +74,6 @@ button:hover {
     width: 100%;
 }
 
-/* Task Box (Active and Deleted Tasks) */
 .tasks-box {
     background-color: white;
     padding: 20px;
@@ -138,4 +135,11 @@ ul {
     border-radius: 4px;
     margin-bottom: 10px;
 }
- 
+
+/* Title colors for Active and Deleted Tasks */
+h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    color: #ff69b4; /* Pink color for titles */
+}
