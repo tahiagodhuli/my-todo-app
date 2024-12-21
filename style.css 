@@ -1,0 +1,122 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #fdddfd;
+    color: #333;
+    line-height: 1.6;
+}
+
+.app {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    background-color: #ffb6c1;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Todo Section */
+.todo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+input, textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ffb6c1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 320px;
+}
+
+button:hover {
+    background-color: #ff69b4;
+}
+
+/* Todo List */
+ul {
+    list-style-type: none;
+    margin-top: 30px;
+    padding-left: 0;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 320px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.todo-item:hover {
+    background-color: #ffebf0;
+}
+
+.delete-btn {
+    background-color: #ffb6c1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 2px 3px;
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+
+.delete-btn:hover {
+    background-color: #ff69b4;
+}
+
+/* Styling for deleted tasks */
+.todo-item.deleted {
+    text-decoration: line-through;
+    text-decoration-color: #ff1493;
+    color: #bbb;
+    background-color: #f8d7da;
+}
+
+h2 {
+    color: #ff69b4;
+    font-size: 1.5rem;
+    margin-top: 30px;
+    text-align: center;
+}
